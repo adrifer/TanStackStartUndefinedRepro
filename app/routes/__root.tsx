@@ -2,7 +2,7 @@ import {
   Link,
   Outlet,
   ScrollRestoration,
-  createRootRoute,
+  createRootRouteWithContext,
 } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 import { Meta, Scripts } from '@tanstack/start'
@@ -12,7 +12,7 @@ import { NotFound } from '~/components/NotFound'
 import appCss from '~/styles/app.css?url'
 import { seo } from '~/utils/seo'
 
-export const Route = createRootRoute({
+export const Route = createRootRouteWithContext<{}>()({
   head: () => ({
     meta: [
       {
@@ -29,6 +29,9 @@ export const Route = createRootRoute({
       }),
     ],
     links: [
+      { rel: 'stylesheet', href: "https://fonts.googleapis.com/css?family=Mukta:300,400,600,700,800&display=swap" },
+      { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Parkinsans:wght@300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" },
+      { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" },
       { rel: 'stylesheet', href: appCss },
       {
         rel: 'apple-touch-icon',
